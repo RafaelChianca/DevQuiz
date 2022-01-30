@@ -1,6 +1,6 @@
 # dev_quiz
 
-A new Flutter project.
+A new Flutter project based on NLW#5 (NextLevelWeek) from RocketSeat.
 
 ## Getting Started
 
