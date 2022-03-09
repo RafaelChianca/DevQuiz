@@ -20,9 +20,11 @@ class QuizCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
-      child: Container(
+      customBorder:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Ink(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
           border: Border.fromBorderSide(BorderSide(color: AppColors.border)),
