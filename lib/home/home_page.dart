@@ -44,15 +44,19 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   LevelButtonWidget(
                     label: 'Fácil',
+                    onTap: () {},
                   ),
                   LevelButtonWidget(
                     label: 'Médio',
+                    onTap: () {},
                   ),
                   LevelButtonWidget(
                     label: 'Difícil',
+                    onTap: () {},
                   ),
                   LevelButtonWidget(
                     label: 'Perito',
+                    onTap: () {},
                   ),
                 ],
               ),
