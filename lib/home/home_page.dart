@@ -30,7 +30,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Change if statement for a FutureBuilder widget
     if (controller.state == HomeState.success) {
       return Scaffold(
         // TODO: Try to change appBar to a SliverAppBar
@@ -59,6 +58,7 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: 24),
               Expanded(
+                // TODO: Fix scroll showing behind level selector
                 child: GridView.count(
                   crossAxisCount: 2,
                   mainAxisSpacing: 16,
