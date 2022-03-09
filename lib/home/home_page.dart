@@ -1,10 +1,10 @@
-import 'package:DevQuiz/challenge/challenge_page.dart';
-import 'package:DevQuiz/core/app_colors.dart';
-import 'package:DevQuiz/home/home_controller.dart';
-import 'package:DevQuiz/home/home_state.dart';
-import 'package:DevQuiz/home/widgets/appbar/app_bar_widget.dart';
-import 'package:DevQuiz/home/widgets/level_button/level_button_widget.dart';
-import 'package:DevQuiz/home/widgets/quiz_card_widget/quiz_card_widget.dart';
+import 'package:dev_quiz/challenge/challenge_page.dart';
+import 'package:dev_quiz/core/app_colors.dart';
+import 'package:dev_quiz/home/home_controller.dart';
+import 'package:dev_quiz/home/home_state.dart';
+import 'package:dev_quiz/home/widgets/appbar/app_bar_widget.dart';
+import 'package:dev_quiz/home/widgets/level_button/level_button_widget.dart';
+import 'package:dev_quiz/home/widgets/quiz_card_widget/quiz_card_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -68,22 +68,24 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSpacing: 16,
                   crossAxisSpacing: 16,
                   children: controller.quizzes!
-                      .map((e) => QuizCardWidget(
-                            title: e.title,
-                            completion:
-                                "${e.questionsAnswered} de ${e.questions.length}",
-                            percentage:
-                                e.questionsAnswered / e.questions.length,
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  CupertinoPageRoute(
-                                    builder: (context) => ChallengePage(
-                                      questions: e.questions,
-                                    ),
-                                  ));
-                            },
-                          ))
+                      .map(
+                        (e) => QuizCardWidget(
+                          title: e.title,
+                          completion:
+                              '${e.questionsAnswered} de ${e.questions.length}',
+                          percentage: e.questionsAnswered / e.questions.length,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                builder: (context) => ChallengePage(
+                                  questions: e.questions,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      )
                       .toList(),
                 ),
               )
@@ -95,7 +97,8 @@ class _HomePageState extends State<HomePage> {
       return Scaffold(
         body: Center(
           child: CircularProgressIndicator.adaptive(
-              valueColor: AlwaysStoppedAnimation<Color>(AppColors.darkGreen)),
+            valueColor: AlwaysStoppedAnimation<Color>(AppColors.darkGreen),
+          ),
         ),
       );
     }

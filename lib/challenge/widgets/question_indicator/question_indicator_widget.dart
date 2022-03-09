@@ -1,5 +1,5 @@
-import 'package:DevQuiz/core/app_text_styles.dart';
-import 'package:DevQuiz/shared/widgets/progress_indicator/progress_indicator.dart';
+import 'package:dev_quiz/core/app_text_styles.dart';
+import 'package:dev_quiz/shared/widgets/progress_indicator/progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 class QuestionIndicatorWidget extends StatelessWidget {
@@ -16,46 +16,44 @@ class QuestionIndicatorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Visibility(
-                visible: shouldShowIcon,
-                child: IconButton(
-                  icon: Icon(Icons.close),
-                  iconSize: 24,
-                  padding: EdgeInsets.only(right: 8),
-                  constraints: BoxConstraints(),
-                  onPressed: () => {Navigator.pop(context)},
-                ),
+    return Column(
+      children: [
+        Row(
+          children: [
+            Visibility(
+              visible: shouldShowIcon,
+              child: IconButton(
+                icon: Icon(Icons.close),
+                iconSize: 24,
+                padding: EdgeInsets.only(right: 8),
+                constraints: BoxConstraints(),
+                onPressed: () => {Navigator.pop(context)},
               ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Questão $currentPage',
-                      style: AppTextStyles.body,
-                    ),
-                    Text(
-                      'de $length',
-                      style: AppTextStyles.body,
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          ProgressIndicatorWidget(
-            value: currentPage / length,
-          )
-        ],
-      ),
+            ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Questão $currentPage',
+                    style: AppTextStyles.body,
+                  ),
+                  Text(
+                    'de $length',
+                    style: AppTextStyles.body,
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+        SizedBox(
+          height: 16,
+        ),
+        ProgressIndicatorWidget(
+          value: currentPage / length,
+        )
+      ],
     );
   }
 }

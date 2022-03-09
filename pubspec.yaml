@@ -1,5 +1,5 @@
-name: DevQuiz
-description: DevQuiz
+name: dev_quiz
+description: dev_quiz
 version: 1.0.0+1
 
 environment:

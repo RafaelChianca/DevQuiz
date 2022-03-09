@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:DevQuiz/shared/models/answer_model.dart';
+import 'package:dev_quiz/shared/models/answer_model.dart';
 
 class QuestionModel {
   final String title;
@@ -22,7 +22,8 @@ class QuestionModel {
     return QuestionModel(
       title: map['title'] ?? '',
       answers: List<AnswerModel>.from(
-          map['answers']?.map((x) => AnswerModel.fromMap(x))),
+        map['answers']?.map((x) => AnswerModel.fromMap(x)),
+      ),
     );
   }
 
