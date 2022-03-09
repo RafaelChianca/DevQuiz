@@ -2,24 +2,24 @@ import 'dart:convert';
 
 class AnswerModel {
   final String title;
-  final bool isRight;
+  final bool isCorrect;
 
   AnswerModel({
     required this.title,
-    this.isRight = false,
+    this.isCorrect = false,
   });
 
   Map<String, dynamic> toMap() {
     return {
       'title': title,
-      'isRight': isRight,
+      'isCorrect': isCorrect,
     };
   }
 
   factory AnswerModel.fromMap(Map<String, dynamic> map) {
     return AnswerModel(
       title: map['title'] ?? '',
-      isRight: map['isRight'] ?? false,
+      isCorrect: map['isCorrect'] ?? false,
     );
   }
 
