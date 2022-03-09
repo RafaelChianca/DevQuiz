@@ -38,23 +38,24 @@ class NextButtonWidget extends StatelessWidget {
       child: Container(
         height: 48,
         child: TextButton(
-            style: TextButton.styleFrom(
-                backgroundColor: backgroundColor,
-                primary: textColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                side: BorderSide(
-                  color: borderColor,
-                )),
-            onPressed: onTap,
-            child: Text(
-              label,
-              style: GoogleFonts.notoSans(
-                fontWeight: FontWeight.w600,
-                fontSize: 15,
+          style: TextButton.styleFrom(
+              backgroundColor: backgroundColor,
+              primary: textColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
-            )),
+              side: BorderSide(
+                color: borderColor,
+              )),
+          onPressed: onTap,
+          child: Text(
+            label,
+            style: GoogleFonts.notoSans(
+              fontWeight: FontWeight.w600,
+              fontSize: 15,
+            ),
+          ),
+        ),
       ),
     );
   }
